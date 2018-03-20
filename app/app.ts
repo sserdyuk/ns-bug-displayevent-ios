@@ -8,7 +8,11 @@ import "./bundle-config";
 import * as application from 'application';
 
 application.on(application.displayedEvent, function (args: application.ApplicationEventData) {
-    console.log("applicationDidDisplay: " + args.ios);
+    console.log("Display never fires: " + args.ios);
+});
+
+application.on(application.resumeEvent, function (args: application.ApplicationEventData) {
+    console.log("Resume fired: " + args.ios);
 });
   
 
